@@ -1,0 +1,164 @@
+//Èlia Isart, Laura Grau
+
+1. Crea las colecciones que aparecen en el diagrama UML. Piensa un campo
+por el que relacionar las diferentes colecciones.
+
+
+db.createCollection("usuario")
+
+db.createCollection("noticia")
+
+db.createCollection("comentario")
+
+
+{
+	"_id": "idusuario1",
+	"nombre_usuario": "usuario1",
+	"cuenta_twitter": "us1",
+	"nombre": "usuario",
+	"descripcion": "estudiante",
+	"telefonos": "123456",
+	"direccion": {
+		"calle": "Calle Lleida",
+		"numero": "16",
+		"ciudad": "Igualada",
+		"cp": "08700"
+	} 
+}
+
+
+{
+	"_idNoticia": "idnoticia1",
+	"titulo": "noticia1",
+	"cuerpo": "cuerpo noticia 1",
+	"fecha": ISODate("2021-6-1"),
+	"tags": ["tag1", "tag2"],
+	"user_id": "idusuario1"
+}
+
+
+{
+	"fecha": ISODate("2021-6-5"),
+	"cuerpo": "comentario1",
+	"user_id": "idusuario1",
+	"noticia_id": "idnoticia1"
+}
+
+
+
+2.Inserta varias noticias (al menos, 10 documentos) con diferentes valores
+en los campos y que, al menos, 3 documentos tengan varios valores en el
+array de tags, y otros que no tengan valor en este campo.
+
+db.noticia.insert([
+	{
+	"_idNoticia": "idnoticia1",
+	"titulo": "noticia1",
+	"cuerpo": "cuerpo noticia 1",
+	"fecha": ISODate("2021-6-1"),
+	"tags": ["tag1", "tag2"],
+	"user_id": "idusuario1"
+	},
+	{
+	"_idNoticia": "idnoticia2",
+	"titulo": "noticia2",
+	"cuerpo": "cuerpo noticia 2",
+	"fecha": ISODate("2021-6-1"),
+	"tags": ["tag1", "tag2"],
+	"user_id": "idusuario1"
+	},
+	{
+	"_idNoticia": "idnoticia3",
+	"titulo": "noticia3",
+	"cuerpo": "cuerpo noticia 3",
+	"fecha": ISODate("2021-6-1"),
+	"tags": ["tag1", "tag2"],
+	"user_id": "idusuario1"
+	},
+	{
+	"_idNoticia": "idnoticia4",
+	"titulo": "noticia4",
+	"cuerpo": "cuerpo noticia 4",
+	"fecha": ISODate("2021-6-1"),
+	"tags": ["tag1", "tag2"],
+	"user_id": "idusuario1"
+	},
+	{
+	"_idNoticia": "idnoticia5",
+	"titulo": "noticia5",
+	"cuerpo": "cuerpo noticia 5",
+	"fecha": ISODate("2021-6-1"),
+	"tags": ["tag1", "tag2"],
+	"user_id": "idusuario1"
+	},
+	{
+	"_idNoticia": "idnoticia6",
+	"titulo": "noticia6",
+	"cuerpo": "cuerpo noticia 6",
+	"fecha": ISODate("2021-6-1"),
+	"tags": ["tag1", "tag2"],
+	"user_id": "idusuario1"
+	},
+	{
+	"_idNoticia": "idnoticia7",
+	"titulo": "noticia7",
+	"cuerpo": "cuerpo noticia 7",
+	"fecha": ISODate("2021-6-1"),
+	"tags": [],
+	"user_id": "idusuario1"
+	},
+	{
+	"_idNoticia": "idnoticia8",
+	"titulo": "noticia8",
+	"cuerpo": "cuerpo noticia 8",
+	"fecha": ISODate("2021-6-1"),
+	"tags": [],
+	"user_id": "idusuario1"
+	},
+	{
+	"_idNoticia": "idnoticia9",
+	"titulo": "noticia9",
+	"cuerpo": "cuerpo noticia 9",
+	"fecha": ISODate("2021-6-1"),
+	"tags": [],
+	"user_id": "idusuario1"
+	},
+	{
+	"_idNoticia": "idnoticia10",
+	"titulo": "noticia10",
+	"cuerpo": "cuerpo noticia 10",
+	"fecha": ISODate("2021-6-1"),
+	"tags": [],
+	"user_id": "idusuario1"
+	}
+])
+
+
+3.Dentro de la colección de usuarios, realiza consultas por nombre de usuario
+y por cuenta de Twitter.
+
+	db.usuario.find({"nombre_usuario": "usuario1", "cuenta_twitter": "usr1"})
+	//canviar els valors de nombre_usuario i cuenta_twitter per a diferents resultats
+
+4.Crea una consulta que cuente el número de usuarios de un CP en concreto.
+
+	db.usuario.find({"direccion.cp": "08700"})
+
+
+5.Crea una consulta las últimas 10 noticias publicadas ordenadas por fecha
+(de más reciente a más antigua).
+
+
+	db.noticia.find().limit(10).sort({"fecha": -1})
+
+
+6.Crea una consulta que devuelva el número de noticias publicadas por un
+usuario determinado.
+
+	db.noticia.count({"user_id": "idusuario1"})
+
+7. Crea una consulta que devuelva las noticias que, en el campo tags, tienen
+por valor “informática”.
+
+	db.noticia.find({"tags": ["informatica"]})
+
