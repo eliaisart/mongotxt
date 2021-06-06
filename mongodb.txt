@@ -55,7 +55,7 @@ db.noticia.insert([
 	"_idNoticia": "idnoticia1",
 	"titulo": "noticia1",
 	"cuerpo": "cuerpo noticia 1",
-	"fecha": ISODate("2021-6-1"),
+	"fecha": ISODate("2021-06-01"),
 	"tags": ["tag1", "tag2"],
 	"user_id": "idusuario1"
 	},
@@ -63,7 +63,7 @@ db.noticia.insert([
 	"_idNoticia": "idnoticia2",
 	"titulo": "noticia2",
 	"cuerpo": "cuerpo noticia 2",
-	"fecha": ISODate("2021-6-1"),
+	"fecha": ISODate("2021-06-14"),
 	"tags": ["tag1", "tag2"],
 	"user_id": "idusuario1"
 	},
@@ -71,7 +71,7 @@ db.noticia.insert([
 	"_idNoticia": "idnoticia3",
 	"titulo": "noticia3",
 	"cuerpo": "cuerpo noticia 3",
-	"fecha": ISODate("2021-6-1"),
+	"fecha": ISODate("2021-06-12"),
 	"tags": ["tag1", "tag2"],
 	"user_id": "idusuario1"
 	},
@@ -79,7 +79,7 @@ db.noticia.insert([
 	"_idNoticia": "idnoticia4",
 	"titulo": "noticia4",
 	"cuerpo": "cuerpo noticia 4",
-	"fecha": ISODate("2021-6-1"),
+	"fecha": ISODate("2021-06-11"),
 	"tags": ["tag1", "tag2"],
 	"user_id": "idusuario1"
 	},
@@ -87,7 +87,7 @@ db.noticia.insert([
 	"_idNoticia": "idnoticia5",
 	"titulo": "noticia5",
 	"cuerpo": "cuerpo noticia 5",
-	"fecha": ISODate("2021-6-1"),
+	"fecha": ISODate("2021-06-21"),
 	"tags": ["tag1", "tag2"],
 	"user_id": "idusuario1"
 	},
@@ -95,7 +95,7 @@ db.noticia.insert([
 	"_idNoticia": "idnoticia6",
 	"titulo": "noticia6",
 	"cuerpo": "cuerpo noticia 6",
-	"fecha": ISODate("2021-6-1"),
+	"fecha": ISODate("2021-06-14"),
 	"tags": ["tag1", "tag2"],
 	"user_id": "idusuario1"
 	},
@@ -103,7 +103,7 @@ db.noticia.insert([
 	"_idNoticia": "idnoticia7",
 	"titulo": "noticia7",
 	"cuerpo": "cuerpo noticia 7",
-	"fecha": ISODate("2021-6-1"),
+	"fecha": ISODate("2021-06-16"),
 	"tags": [],
 	"user_id": "idusuario1"
 	},
@@ -111,7 +111,7 @@ db.noticia.insert([
 	"_idNoticia": "idnoticia8",
 	"titulo": "noticia8",
 	"cuerpo": "cuerpo noticia 8",
-	"fecha": ISODate("2021-6-1"),
+	"fecha": ISODate("2021-06-17"),
 	"tags": [],
 	"user_id": "idusuario1"
 	},
@@ -119,7 +119,7 @@ db.noticia.insert([
 	"_idNoticia": "idnoticia9",
 	"titulo": "noticia9",
 	"cuerpo": "cuerpo noticia 9",
-	"fecha": ISODate("2021-6-1"),
+	"fecha": ISODate("2021-06-16"),
 	"tags": [],
 	"user_id": "idusuario1"
 	},
@@ -127,7 +127,7 @@ db.noticia.insert([
 	"_idNoticia": "idnoticia10",
 	"titulo": "noticia10",
 	"cuerpo": "cuerpo noticia 10",
-	"fecha": ISODate("2021-6-1"),
+	"fecha": ISODate("2021-06-15"),
 	"tags": [],
 	"user_id": "idusuario1"
 	}
@@ -144,13 +144,10 @@ y por cuenta de Twitter.
 
 	db.usuario.find({"direccion.cp": "08700"})
 
-
 5.Crea una consulta las últimas 10 noticias publicadas ordenadas por fecha
 (de más reciente a más antigua).
 
-
 	db.noticia.find().limit(10).sort({"fecha": -1})
-
 
 6.Crea una consulta que devuelva el número de noticias publicadas por un
 usuario determinado.
