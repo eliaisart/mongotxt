@@ -104,7 +104,7 @@ db.noticia.insert([
 	"titulo": "noticia7",
 	"cuerpo": "cuerpo noticia 7",
 	"fecha": ISODate("2021-06-16"),
-	"tags": [],
+	"tags": ["informatica"],
 	"user_id": "idusuario1"
 	},
 	{
@@ -142,7 +142,7 @@ y por cuenta de Twitter.
 
 4.Crea una consulta que cuente el número de usuarios de un CP en concreto.
 
-	db.usuario.find({"direccion.cp": "08700"})
+	db.usuario.count({"direccion.cp": "08700"})
 
 5.Crea una consulta las últimas 10 noticias publicadas ordenadas por fecha
 (de más reciente a más antigua).
