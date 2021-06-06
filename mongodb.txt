@@ -31,7 +31,7 @@ db.createCollection("comentario")
 	"_idNoticia": "idnoticia1",
 	"titulo": "noticia1",
 	"cuerpo": "cuerpo noticia 1",
-	"fecha": ISODate("2021-6-1"),
+	"fecha": ISODate("2021-06-01"),
 	"tags": ["tag1", "tag2"],
 	"user_id": "idusuario1"
 }
